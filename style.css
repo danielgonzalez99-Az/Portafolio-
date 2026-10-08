@@ -1,0 +1,319 @@
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --color-fondo: #f8fafc; /* Gris muy claro, casi blanco, para un look limpio */
+    --color-texto: #1e293b; /* Azul grisáceo oscuro para excelente lectura */
+    --color-primario: #0f172a; /* Tono institucional oscuro para botones y header */
+    --color-acento: #2563eb; /* Azul brillante para destacar elementos */
+    --color-tarjetas: #ffffff;
+    --fuente-principal: 'Inter', sans-serif;
+    --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Hace que al hacer clic en el menú, baje suavemente */
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. NAVEGACIÓN (HEADER)
+   ========================================= */
+header {
+    background-color: var(--color-primario);
+    color: #ffffff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--sombra-suave);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-acento);
+}
+
+/* =========================================
+   3. SECCIÓN HERO (INICIO)
+   ========================================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    margin-top: 60px; /* Compensa el menú fijo */
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--color-primario);
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-acento);
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: #475569;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-acento);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   4. SECCIONES GENERALES Y PROYECTOS
+   ========================================= */
+section {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-primario);
+}
+
+.grid-proyectos, .grid-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Tarjetas de Proyectos con estilo cinematográfico/premium */
+.tarjeta-proyecto {
+    background-color: var(--color-tarjetas);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-proyecto:hover {
+    transform: translateY(-10px); /* Efecto de elevación al pasar el mouse */
+}
+
+.tarjeta-proyecto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.info-proyecto {
+    padding: 1.5rem;
+}
+
+.info-proyecto h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primario);
+}
+
+.tags {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    background-color: #e2e8f0;
+    color: var(--color-primario);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* =========================================
+   5. HABILIDADES Y CONTACTO
+   ========================================= */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Mantiene las dos columnas */
+    gap: 3rem;
+    align-items: stretch; /* Hace que ambas columnas tengan la misma altura */
+    background-color: var(--color-tarjetas);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: var(--sombra-suave);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el texto verticalmente */
+    text-align: left; /* Alineado a la izquierda se ve más elegante sin formulario */
+}
+
+.contact-info h3 {
+    color: var(--color-primario);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #475569;
+}
+
+.contact-info a {
+    color: var(--color-acento);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* El contenedor de la nueva imagen grande */
+.contact-image-container {
+    width: 100%;
+    height: 100%;
+    min-height: 300px; /* Asegura que no se haga muy pequeña */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* La imagen cubriendo todo el espacio */
+.contact-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen sin deformarla para llenar el cuadro */
+}
+/* =========================================
+   6. DISEÑO RESPONSIVO (MÓVILES)
+   ========================================= */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Pasa a una sola columna */
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+    .contact-info {
+        text-align: center; /* Centra el texto en celulares */
+    }
+    .contact-image-container {
+        min-height: 250px;
+    }
+    /* Mostrar el botón de hamburguesa */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Ocultar los enlaces y prepararlos para el menú desplegable */
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: -100%; /* Menú escondido a la izquierda */
+        flex-direction: column;
+        background-color: var(--color-primario);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease; /* Animación suave */
+        box-shadow: var(--sombra-suave);
+    }
+
+    /* Clase activa que agregará JavaScript para mostrar el menú */
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    /* Ajustar tamaños de letra en móviles */
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+}
